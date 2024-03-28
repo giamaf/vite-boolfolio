@@ -1,12 +1,14 @@
 <script>
 import axios from 'axios';
+import AppHeader from './components/AppHeader.vue';
 export default {
-  // Javascript Logic
+  name: 'Portfolio',
+  components: { AppHeader }
 };
 </script>
 
 <template>
-  <!-- Template -->
+  <AppHeader />
 </template>
 
 <style lang="scss">
