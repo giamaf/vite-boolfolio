@@ -1,14 +1,46 @@
 <script>
 import axios from 'axios';
 import AppHeader from './components/AppHeader.vue';
+const defaultEndpoint = 'http://localhost:8000/api/projects/';
+
+
 export default {
   name: 'Portfolio',
-  components: { AppHeader }
+  components: { AppHeader },
+  data: () => ({
+    projects: []
+  }),
+
+  methods: {
+    // Metodo per effettuare la chiamata API
+    fetchProjects() {
+      axios.get(defaultEndpoint).then((res) => {
+        console.log(res.data);
+
+        // Inserisco i dati della chiamata nel mio array projects
+        this.projects = res.data;
+      })
+    }
+  },
+
+  created() {
+    // Alla creazione effettuo la chiamata API
+    this.fetchProjects();
+  }
 };
 </script>
 
 <template>
   <AppHeader />
+
+  <main>
+    <ul>
+      <li v-for="project in projects" :key="project.id">
+        <h5>{{ project.name }}</h5>
+      </li>
+    </ul>
+  </main>
+
 </template>
 
 <style lang="scss">
