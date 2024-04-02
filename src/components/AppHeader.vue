@@ -17,8 +17,8 @@ export default {
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <RouterLink class="nav-link active" aria-current="page" to="/">Home</RouterLink>
-                        <RouterLink class="nav-link" to="/contact-us">Contact Us</RouterLink>
+                        <RouterLink class="nav-link active" aria-current="page" :to="{ name: 'Home' }">Home</RouterLink>
+                        <RouterLink class="nav-link" :to="{ name: 'ContactUs' }">Contact Us</RouterLink>
                     </div>
                 </div>
             </div>
