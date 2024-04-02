@@ -17,8 +17,7 @@ export default {
   <AppHeader />
 
   <main class="container">
-    <HomePage />
-    <ContactUsPage />
+    <RouterView />
   </main>
 
 </template>
