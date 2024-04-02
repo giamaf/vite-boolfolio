@@ -15,7 +15,7 @@ export default {
         // Metodo per effettuare la chiamata API
         fetchProjects() {
             axios.get(defaultEndpoint).then((res) => {
-                console.log(res.data);
+                // console.log(res.data);
 
                 // Inserisco i dati della chiamata nel mio array projects
                 this.projects = res.data;

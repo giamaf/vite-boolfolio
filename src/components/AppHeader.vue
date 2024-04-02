@@ -17,10 +17,8 @@ export default {
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        <a class="nav-link" href="#">Projects</a>
-                        <a class="nav-link" href="#">Pricing</a>
-                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                        <RouterLink class="nav-link active" aria-current="page" to="/">Home</RouterLink>
+                        <RouterLink class="nav-link" to="/contact-us">Contact Us</RouterLink>
                     </div>
                 </div>
             </div>

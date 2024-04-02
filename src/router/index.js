@@ -11,6 +11,8 @@ const router = createRouter({
     routes: [
         { path: '/', component: HomePage },
         { path: '/contact-us', component: ContactUsPage },
+        // Qualunque path non incluso reindirizza alla HomePage anche se c'è qualcosa in query string
+        { path: '/:pathMatch(.*)*', redirect: '/' }
     ]
 
 })
