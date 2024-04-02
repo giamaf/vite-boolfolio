@@ -1,7 +1,4 @@
 <script>
-
-
-
 export default {
     name: 'ContactUsPage',
 
@@ -10,7 +7,7 @@ export default {
 
 <template>
 
-    <h1>Contact US</h1>
+    <h1 class="mt-3">Contact US</h1>
 
 </template>
 
