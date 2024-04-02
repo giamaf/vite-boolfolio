@@ -36,9 +36,12 @@ export default {
             <img v-if="project.image" :src="project.image" class="card-img-top float-start" :alt="project.name">
             <p>{{ project.content }}</p>
         </div>
-        <div class="card-footer little-font d-flex gap-2">
-            <small class="card-text"><strong>Created:</strong> {{ getFormatDate(project.created_at) }}</small>
-            <small class="card-text"><strong>Updated:</strong> {{ getFormatDate(project.updated_at) }}</small>
+        <div class="card-footer little-font d-flex justify-content-between gap-2">
+            <div class="d-flex gap-2">
+                <small class="card-text"><strong>Created:</strong> {{ getFormatDate(project.created_at) }}</small>
+                <small class="card-text"><strong>Updated:</strong> {{ getFormatDate(project.updated_at) }}</small>
+            </div>
+            <RouterLink :to="`/projects/${project.id}`">Details</RouterLink>
         </div>
     </div>
 </template>
