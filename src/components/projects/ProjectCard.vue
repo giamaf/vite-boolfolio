@@ -3,7 +3,7 @@ export default {
     // Javascript Logic
     name: 'ProjectCard',
 
-    props: { project: Object },
+    props: { project: Object, isDetail: Boolean },
 
     methods: {
         getFormatDate(param) {
@@ -41,7 +41,8 @@ export default {
                 <small class="card-text"><strong>Created:</strong> {{ getFormatDate(project.created_at) }}</small>
                 <small class="card-text"><strong>Updated:</strong> {{ getFormatDate(project.updated_at) }}</small>
             </div>
-            <RouterLink :to="`/projects/${project.id}`">Details</RouterLink>
+            <RouterLink v-if="!isDetail" :to="{ name: 'project-detail', params: { slug: project.slug } }">Details
+            </RouterLink>
         </div>
     </div>
 </template>
