@@ -1,33 +1,15 @@
 <script>
 import axios from 'axios';
 import AppHeader from './components/AppHeader.vue';
-import ProjectsList from './components/projects/ProjectsList.vue';
+import HomePage from './components/pages/HomePage.vue';
+import ContactUsPage from './components/pages/ContactUsPage.vue'
 const defaultEndpoint = 'http://localhost:8000/api/projects/';
 
 
 export default {
   name: 'Portfolio',
-  components: { AppHeader, ProjectsList },
-  data: () => ({
-    projects: []
-  }),
+  components: { AppHeader, HomePage, ContactUsPage },
 
-  methods: {
-    // Metodo per effettuare la chiamata API
-    fetchProjects() {
-      axios.get(defaultEndpoint).then((res) => {
-        console.log(res.data);
-
-        // Inserisco i dati della chiamata nel mio array projects
-        this.projects = res.data;
-      })
-    }
-  },
-
-  created() {
-    // Alla creazione effettuo la chiamata API
-    this.fetchProjects();
-  }
 };
 </script>
 
@@ -35,8 +17,8 @@ export default {
   <AppHeader />
 
   <main class="container">
-    <ProjectsList :projects="projects" />
-
+    <HomePage />
+    <ContactUsPage />
   </main>
 
 </template>
