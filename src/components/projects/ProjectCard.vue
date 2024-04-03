@@ -29,7 +29,8 @@ export default {
     <div class="card">
         <div class="card-header">
             <h5 class="card-title m-0">{{ project.name }}</h5>
-            <small class="card-title little-font m-0"><strong>Type:</strong> {{ project.type.label }}</small><br>
+            <small v-if="project.type" class="card-title little-font m-0"><strong>Type:</strong>
+                {{ project.type.label }}</small><br>
 
             <div v-if="project.technologies.length">
                 <strong class="little-font">Technology:</strong>
