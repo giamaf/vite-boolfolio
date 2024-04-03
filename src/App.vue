@@ -1,8 +1,8 @@
 <script>
 import axios from 'axios';
 import AppHeader from './components/AppHeader.vue';
-import HomePage from './components/pages/HomePage.vue';
-import ContactUsPage from './components/pages/ContactUsPage.vue'
+import HomePage from './pages/HomePage.vue';
+import ContactUsPage from './pages/ContactUsPage.vue'
 const defaultEndpoint = 'http://localhost:8000/api/projects/';
 
 

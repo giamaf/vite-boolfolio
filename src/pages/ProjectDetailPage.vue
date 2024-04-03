@@ -1,6 +1,6 @@
 <script>
 import axios from 'axios';
-import ProjectCard from '../projects/ProjectCard.vue';
+import ProjectCard from '../components/projects/ProjectCard.vue';
 const defaultEndpoint = 'http://localhost:8000/api/projects/';
 
 export default {
@@ -16,7 +16,10 @@ export default {
             axios
                 .get(`${defaultEndpoint}` + this.$route.params.slug)
                 .then((res) => { this.project = res.data })
-                .catch((err) => { console.error(err) })
+                .catch((err) => {
+                    console.error(err)
+                    this.$router.push({ name: 'not-found' })
+                })
                 .then(() => { this.isLoading = false })
         }
     },

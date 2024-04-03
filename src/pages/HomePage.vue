@@ -1,6 +1,6 @@
 <script>
 import axios from 'axios';
-import ProjectsList from '../projects/ProjectsList.vue';
+import ProjectsList from '../components/projects/ProjectsList.vue';
 const defaultEndpoint = 'http://localhost:8000/api/projects/';
 
 

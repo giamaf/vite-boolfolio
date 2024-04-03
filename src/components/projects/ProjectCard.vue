@@ -19,7 +19,8 @@ export default {
             if (month < 10) month = '0' + month;
 
             return `${day}/${month}/${year} alle ${hours}:${minutes}`;
-        }
+        },
+
     }
 };
 </script>
@@ -29,8 +30,15 @@ export default {
         <div class="card-header">
             <h5 class="card-title m-0">{{ project.name }}</h5>
             <small class="card-title little-font m-0"><strong>Type:</strong> {{ project.type.label }}</small><br>
-            <!-- <small class="card-title little-font m-0"><strong>Technology:</strong>
-                {{ project.technologies.label }}</small> -->
+
+            <div v-if="project.technologies.length">
+                <strong class="little-font">Technology:</strong>
+                <small v-for="technology in project.technologies" :key="technology.id"
+                    class="card-title little-font m-0">
+                    <span class="badge">{{ technology.label }}</span>
+                </small>
+            </div>
+
         </div>
         <div class="card-body clearfix">
             <img v-if="project.image" :src="project.image" class="card-img-top float-start" :alt="project.name">
