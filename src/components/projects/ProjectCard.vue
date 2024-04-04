@@ -32,15 +32,17 @@ export default {
             <small class="little-font"><strong>Type: </strong></small>
             <RouterLink v-if="project.type" :to="{ name: 'type-projects', params: { slug: project.type.slug } }">
                 <small class="card-title little-font m-0">
-                    {{ project.type.label }}</small><br>
+                    <span class="badge text-bg-info">{{ project.type.label }}</span></small><br>
             </RouterLink>
 
-            <div v-if="project.technologies.length">
-                <strong class="little-font">Technology:</strong>
-                <small v-for="technology in project.technologies" :key="technology.id"
-                    class="card-title little-font m-0">
-                    <span class="badge">{{ technology.label }}</span>
-                </small>
+            <div v-if="project.technologies?.length">
+                <strong class="little-font">Technology: </strong>
+                <RouterLink v-for="technology in project.technologies" :key="technology.id"
+                    :to="{ name: 'technology-projects', params: { slug: technology.slug } }">
+                    <small class="card-title little-font m-0">
+                        <span class="badge text-bg-secondary">{{ technology.label }}</span>
+                    </small>
+                </RouterLink>
             </div>
 
         </div>
