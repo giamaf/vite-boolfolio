@@ -29,8 +29,11 @@ export default {
     <div class="card">
         <div class="card-header">
             <h5 class="card-title m-0">{{ project.name }}</h5>
-            <small v-if="project.type" class="card-title little-font m-0"><strong>Type:</strong>
-                {{ project.type.label }}</small><br>
+            <small class="little-font"><strong>Type: </strong></small>
+            <RouterLink v-if="project.type" :to="{ name: 'type-projects', params: { slug: project.type.slug } }">
+                <small class="card-title little-font m-0">
+                    {{ project.type.label }}</small><br>
+            </RouterLink>
 
             <div v-if="project.technologies.length">
                 <strong class="little-font">Technology:</strong>
